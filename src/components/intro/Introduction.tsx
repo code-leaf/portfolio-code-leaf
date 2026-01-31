@@ -32,7 +32,7 @@ export const Introduction = () => {
             CodeLeaf<span className='text-base'>（コードリーフ）</span>
           </h3>
           <p className='leading-relaxed max-w-[855px]'>
-            福岡県在住の33歳。現在は職業訓練校の講師を務めております。
+            福岡県在住の34歳、男。製造業の社内SEを経て、DX推進を見据えたICT基盤技術の習得に向け2026年2月より職業訓練を受講しております。
             プログラミングの魅力に取り憑かれ、2024年1月からWeb開発の学習をスタート。
             Next.js、TypeScriptを用いたWebアプリケーションを制作しております。
           </p>
