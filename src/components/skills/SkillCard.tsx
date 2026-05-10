@@ -1,5 +1,6 @@
 import { Skill } from '@/types/skills'; // スキル型定義をインポート
 import { Star } from 'lucide-react'; // 星アイコンコンポーネントをインポート
+import Image from 'next/image';
 
 /**
  * スキルを視覚的に表示するためのカードコンポーネント
@@ -13,18 +14,19 @@ export const SkillCard = ({
   level,
   description,
   textColor,
+  badge,
 }: Skill) => {
   return (
     //カード全体のコンテナ要素
-    <div className='p-6 rounded-lg text-gray-800 bg-white/90 border border-gray-400 shadow-md'>
+    <div className='p-6 rounded-lg text-gray-800 bg-white/90 border border-gray-400 shadow-md relative flex flex-col'>
       {/* アイコンとタイトルを横並びにするコンテナ */}
-      <div className='flex items-center mb-4'>
+      <div className='flex items-center mb-4 min-h-[5rem]'>
         {/* アイコン部分 */}
-        <div className='w-12 h-12 flex items-center justify-center rounded-full mr-4'>
+        <div className='w-12 h-12 flex items-center justify-center rounded-full mr-4 flex-shrink-0'>
           <Icon className={`w-12 h-12 ${textColor}`} />
         </div>
         {/* タイトルと評価の星 */}
-        <div>
+        <div className='flex-1'>
           <h3 className='text-xl font-semibold'>{title}</h3>
           <div className='flex items-center'>
             {/* 5つの星を生成するループ */}
@@ -43,10 +45,23 @@ export const SkillCard = ({
             ))}
           </div>
         </div>
+
+        {/* バッジ：タイトル横・アスペクト比1:1 */}
+        {badge && (
+          <div className='relative w-16 h-16 flex-shrink-0 ml-2'>
+            <Image
+              src={badge}
+              alt={`${title} Badge`}
+              fill
+              className='object-cover rounded-md'
+            />
+          </div>
+        )}
       </div>
 
       {/* スキルの説明文を表示 */}
-      <p className='text-lg'>{description}</p>
+      <p className='text-lg flex-1'>{description}</p>
     </div>
+
   );
 };

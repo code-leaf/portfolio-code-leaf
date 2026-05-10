@@ -51,6 +51,7 @@ export const skills: Skill[] = [
     description:
       'ポリテクにて『スッキリわかるJava入門』でJavaの基礎を習得後、授業外4週間弱・紫本＆黒本各1周でJava Silverを取得。効率的に学習を進める姿勢を大切にしております。',
     textColor: 'text-orange-500',
+    badge: '/images/badges/SILVSE17JPN.jpg',
   },
   {
     title: '基本情報技術者',

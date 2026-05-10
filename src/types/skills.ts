@@ -14,4 +14,5 @@ export type Skill = {
   level: number;
   description: string;
   textColor: string;
+  badge?: string;
 };
