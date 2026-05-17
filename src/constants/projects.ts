@@ -91,12 +91,13 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    title: 'NARUTO図鑑',
-    description: `Udemy講座の教材として作成したキャラクター情報データベースアプリケーション。
-    基本的なデータベース操作とキャラクター詳細情報の表示機能を実装。Web開発の基礎知識習得を学習できました。`,
-    technologies: ['React 18', 'Axios', 'Jest', 'REST API', 'react-scripts'],
-    imageUrl: '/urlImages/naruto-app.png',
-    githubUrl: 'https://github.com/code-leaf/naruto-app',
-    projectUrl: 'https://naruto-app-theta.vercel.app/',
+    title: 'パスワードジェネレーター',
+    description: `バイブコーディングによる実験的な開発で作成したパスワード生成ツール。
+    PythonのCLIツールとして開発後、FlaskでWebアプリ化しRenderにデプロイ。
+    文字種・長さをブラウザから設定できます。`,
+    technologies: ['Python', 'Flask', 'Gunicorn', 'Render'],
+    imageUrl: '/urlImages/password-generator.png',
+    githubUrl: 'https://github.com/code-leaf/password-generator',
+    projectUrl: 'https://password-generator-qqiw.onrender.com',
   },
 ] as const;
