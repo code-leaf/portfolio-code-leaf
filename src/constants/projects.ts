@@ -75,19 +75,13 @@ export const projects: Project[] = [
 
   {
     id: 5,
-    title: '音楽プレイヤー',
-    description: `Udemy講座の教材として作成した音楽プレイヤーアプリケーション。
-    講座で解説される手順に沿って、Spotify APIの活用方法を学習。基本的な楽曲検索と再生機能の実装プロセスを体験しました。`,
-    technologies: [
-      'React 18',
-      'Font Awesome',
-      'Axios',
-      'Spotify API',
-      'react-scripts',
-    ],
-    imageUrl: '/urlImages/music-app.png',
-    githubUrl: 'https://github.com/code-leaf/music-app',
-    projectUrl: 'https://music-app-ruddy-nine.vercel.app/',
+    title: 'たんじょうびカウントダウン',
+    description: `子供に「誕生日まであと何日？」と何度も聞かれるのが開発のきっかけ。バイブコーディングで実験的に開発。
+データ量が少ないため、DBは使わずJSONでデータ管理するシンプルな設計を選択しました。`,
+    technologies: ['Next.js 16', 'React 19', 'TypeScript', 'TailwindCSS 4'],
+    imageUrl: '/urlImages/birth-day-tracker.png',
+    githubUrl: 'https://github.com/code-leaf/birth-day-tracker',
+    projectUrl: 'https://birth-day-tracker-self.vercel.app/',
   },
   {
     id: 6,
