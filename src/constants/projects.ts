@@ -94,4 +94,15 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/code-leaf/password-generator',
     projectUrl: 'https://password-generator-qqiw.onrender.com',
   },
+  {
+    id: 7,
+    title: '自己紹介カード生成アプリ',
+    description: `Spring Boot入門として作成したWebアプリケーション。
+    GET/POSTリクエストの処理とThymeleafによるサーバーサイドレンダリングを、MVCパターンで実装しました。
+    MVP段階のためCSSは未適用。スタイリングや入力項目の拡張など、継続的な改善を予定しています。`,
+    technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Maven'],
+    imageUrl: '/urlImages/selfintro.png',
+    githubUrl: 'https://github.com/code-leaf/springboot-learning',
+    projectUrl: '',
+  },
 ] as const;
