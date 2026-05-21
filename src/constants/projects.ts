@@ -105,4 +105,14 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/code-leaf/springboot-learning',
     projectUrl: '',
   },
+  {
+    id: 8,
+    title: 'おみくじアプリ（実装中）',
+    description: `自己紹介カードアプリに続くSpring Boot第2作。現在、実装中。
+    Javaの乱数生成（Random）・条件分岐（if/switch）・Modelを用いた値の受け渡しを実装予定。`,
+    technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Maven'],
+    imageUrl: '/urlImages/coming-soon.svg',
+    githubUrl: '',
+    projectUrl: '',
+  },
 ] as const;

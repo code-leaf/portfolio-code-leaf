@@ -67,33 +67,40 @@ export const Portfolio = () => {
                   {project.description}
                 </p>
 
-                {/* ボタングループのコンテナ */}
-                <div className='flex gap-4'>
-                  {/* GitHubリンクボタン */}
-                  <a
-                    href={project.githubUrl}
-                    target='_blank' // 新しいタブで開く
-                    //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
-                    // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
-                    rel='noopener noreferrer'
-                    className='flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors'
-                  >
-                    <Github size={20} />
-                    <span className='text-sm sm:text-base'>コード</span>
-                  </a>
+                {/* どちらかのURLがある場合のみボタングループを表示 */}
+                {(project.githubUrl || project.projectUrl) && (
+                  <div className='flex gap-4'>
+                    {/* GitHubリンクボタン */}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target='_blank' // 新しいタブで開く
+                        //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
+                        // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
+                        rel='noopener noreferrer'
+                        className='flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors'
+                      >
+                        <Github size={20} />
+                        <span className='text-sm sm:text-base'>コード</span>
+                      </a>
+                    )}
 
-                  <a
-                    href={project.projectUrl}
-                    target='_blank' // 新しいタブで開く
-                    //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
-                    // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
-                    rel='noopener noreferrer' //
-                    className='flex items-center gap-2 px-4 py-2 border border-gray-800 text-gray-800 rounded-lg hover:bg-gray-50 transition-colors'
-                  >
-                    <ExternalLink size={20} />
-                    <span className='text-sm sm:text-base'>リンク</span>
-                  </a>
-                </div>
+                    {/* 公開URLリンクボタン */}
+                    {project.projectUrl && (
+                      <a
+                        href={project.projectUrl}
+                        target='_blank' // 新しいタブで開く
+                        //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
+                        // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
+                        rel='noopener noreferrer' //
+                        className='flex items-center gap-2 px-4 py-2 border border-gray-800 text-gray-800 rounded-lg hover:bg-gray-50 transition-colors'
+                      >
+                        <ExternalLink size={20} />
+                        <span className='text-sm sm:text-base'>リンク</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </article>
           ))}
