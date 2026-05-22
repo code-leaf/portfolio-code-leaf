@@ -102,8 +102,8 @@ export const projects: Project[] = [
     MVP段階のためCSSは未適用。スタイリングや入力項目の拡張など、継続的な改善を予定しています。`,
     technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Maven'],
     imageUrl: '/urlImages/selfintro.png',
-    githubUrl: 'https://github.com/code-leaf/springboot-learning',
-    projectUrl: '',
+    githubUrl: 'https://github.com/code-leaf/selfintro',
+    projectUrl: 'https://selfintro-l656.onrender.com/form',
   },
   {
     id: 8,
