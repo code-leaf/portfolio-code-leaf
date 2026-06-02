@@ -105,14 +105,26 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/code-leaf/selfintro',
     projectUrl: 'https://selfintro-l656.onrender.com/form',
   },
+  // {
+  //   id: 8,
+  //   title: 'おみくじアプリ（実装中）',
+  //   description: `自己紹介カードアプリに続くSpring Boot第2作。現在、実装中。
+  //   Javaの乱数生成（Random）・条件分岐（if/switch）・Modelを用いた値の受け渡しを実装予定。`,
+  //   technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Maven'],
+  //   imageUrl: '/urlImages/coming-soon.svg',
+  //   githubUrl: '',
+  //   projectUrl: '',
+  // },
   {
     id: 8,
-    title: 'おみくじアプリ（実装中）',
-    description: `自己紹介カードアプリに続くSpring Boot第2作。現在、実装中。
-    Javaの乱数生成（Random）・条件分岐（if/switch）・Modelを用いた値の受け渡しを実装予定。`,
+    title: 'おみくじアプリ',
+    description: `自己紹介カードアプリに続くSpring Boot第2作。
+GET/POSTの使い分けと、Modelを介したThymeleafへの値渡しを実装。
+結果の選択は if文を使わず、配列と乱数インデックスによるシンプルな一行で実現しています。MVP段階のためCSSは未適用。
+今後、スタイリングの追加を予定しています。`,
     technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Maven'],
-    imageUrl: '/urlImages/coming-soon.svg',
-    githubUrl: '',
-    projectUrl: '',
+    imageUrl: '/urlImages/omikuji.png',
+    githubUrl: 'https://github.com/code-leaf/omikuji/tree/main',
+    projectUrl: 'https://omikuji-oa2i.onrender.com/omikuji',
   },
 ] as const;
