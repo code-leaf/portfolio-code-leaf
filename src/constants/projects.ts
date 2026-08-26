@@ -127,4 +127,24 @@ GET/POSTの使い分けと、Modelを介したThymeleafへの値渡しを実装�
     githubUrl: 'https://github.com/code-leaf/omikuji/tree/main',
     projectUrl: 'https://omikuji-oa2i.onrender.com/omikuji',
   },
+  {
+    id: 9,
+    title: 'start-words',
+    description: `職業訓練でチーム開発したPHP製フラッシュカードアプリを、Next.js・TypeScript・Supabaseを使用して移植したWebアプリケーション。
+    AIを活用したバイブコーディングで開発し、認証・RLSによるデータ分離・学習履歴などを実装しています。`,
+    technologies: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'TailwindCSS 4',
+      'Supabase',
+      'Supabase Auth',
+      'PostgreSQL',
+    ],
+    imageUrl: '/urlImages/start-words.png',
+    githubUrl: 'https://github.com/code-leaf/start-words',
+    projectUrl: 'https://start-words.vercel.app/',
+    phpUrl: 'https://github.com/code-leaf/anki-app',
+    presentationUrl: '/documents/start-words-php-presentation.pdf',
+  },
 ] as const;

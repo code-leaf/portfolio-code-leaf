@@ -1,7 +1,7 @@
 'use client'; // ユーザー操作に適応するための定型文
 import { SectionLayout } from '@/components/SectionLayout';
 import { projects } from '@/constants/projects';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, FileText, Github } from 'lucide-react';
 import Image from 'next/image';
 
 /**
@@ -67,40 +67,87 @@ export const Portfolio = () => {
                   {project.description}
                 </p>
 
-                {/* どちらかのURLがある場合のみボタングループを表示 */}
-                {(project.githubUrl || project.projectUrl) && (
-                  <div className='flex gap-4'>
-                    {/* GitHubリンクボタン */}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target='_blank' // 新しいタブで開く
-                        //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
-                        // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
-                        rel='noopener noreferrer'
-                        className='flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors'
-                      >
-                        <Github size={20} />
-                        <span className='text-sm sm:text-base'>コード</span>
-                      </a>
-                    )}
+                {/* 移植元・発表資料などの追加リンクを持つ作品かどうか */}
+                {(() => {
+                  const hasExtraLinks = Boolean(
+                    project.phpUrl || project.presentationUrl,
+                  );
+                  return (
+                    /* どちらかのURLがある場合のみボタングループを表示 */
+                    (project.githubUrl || project.projectUrl) && (
+                      <div className='flex flex-wrap items-center gap-4 justify-between'>
+                        <div className='flex flex-wrap gap-4'>
+                          {/* GitHubリンクボタン */}
+                          {project.githubUrl && (
+                            <a
+                              href={project.githubUrl}
+                              target='_blank' // 新しいタブで開く
+                              //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
+                              // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
+                              rel='noopener noreferrer'
+                              className='flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors'
+                            >
+                              <Github size={20} />
+                              <span className='text-sm sm:text-base'>
+                                コード
+                              </span>
+                            </a>
+                          )}
 
-                    {/* 公開URLリンクボタン */}
-                    {project.projectUrl && (
-                      <a
-                        href={project.projectUrl}
-                        target='_blank' // 新しいタブで開く
-                        //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
-                        // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
-                        rel='noopener noreferrer' //
-                        className='flex items-center gap-2 px-4 py-2 border border-gray-800 text-gray-800 rounded-lg hover:bg-gray-50 transition-colors'
-                      >
-                        <ExternalLink size={20} />
-                        <span className='text-sm sm:text-base'>リンク</span>
-                      </a>
-                    )}
-                  </div>
-                )}
+                          {/* 公開URLリンクボタン */}
+                          {project.projectUrl && (
+                            <a
+                              href={project.projectUrl}
+                              target='_blank' // 新しいタブで開く
+                              //noopener: 新しく開いたページから、元のページを操作できないようにする。（元のページを書き換えたり、フィッシング詐欺ページに置き換えたりするのを防ぐ
+                              // noreferrer: 新しく開いたページに、どこからリンクされたかの情報を渡さないようにする。（プライバシー保護）
+                              rel='noopener noreferrer' //
+                              className='flex items-center gap-2 px-4 py-2 border border-gray-800 text-gray-800 rounded-lg hover:bg-gray-50 transition-colors'
+                            >
+                              <ExternalLink size={20} />
+                              <span className='text-sm sm:text-base'>
+                                リンク
+                              </span>
+                            </a>
+                          )}
+                        </div>
+
+                        {/* 移植元PHP版・発表資料へのリンクグループ（右端寄せ） */}
+                        {hasExtraLinks && (
+                          <div className='flex flex-wrap gap-4'>
+                            {project.phpUrl && (
+                              <a
+                                href={project.phpUrl}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors'
+                              >
+                                <Github size={20} />
+                                <span className='text-sm sm:text-base'>
+                                  PHP版
+                                </span>
+                              </a>
+                            )}
+
+                            {project.presentationUrl && (
+                              <a
+                                href={project.presentationUrl}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='flex items-center gap-2 px-4 py-2 border border-gray-800 text-gray-800 rounded-lg hover:bg-gray-50 transition-colors'
+                              >
+                                <FileText size={20} />
+                                <span className='text-sm sm:text-base'>
+                                  発表資料（PHP）
+                                </span>
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )
+                  );
+                })()}
               </div>
             </article>
           ))}

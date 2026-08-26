@@ -22,4 +22,10 @@ export type Project = {
 
   /** デモサイトがある場合のURL（例：'https://project.com'） */
   projectUrl: string;
+
+  /** 移植元・旧バージョンなどのGitHubリポジトリURL（任意、例：PHP版のリポジトリ） */
+  phpUrl?: string;
+
+  /** 関連する発表資料などのURL（任意、例：'/documents/xxx.pdf'） */
+  presentationUrl?: string;
 };
