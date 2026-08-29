@@ -70,7 +70,7 @@ export const Portfolio = () => {
                 {/* 移植元・発表資料などの追加リンクを持つ作品かどうか */}
                 {(() => {
                   const hasExtraLinks = Boolean(
-                    project.phpUrl || project.presentationUrl,
+                    project.originUrl || project.presentationUrl,
                   );
                   return (
                     /* どちらかのURLがある場合のみボタングループを表示 */
@@ -112,19 +112,20 @@ export const Portfolio = () => {
                           )}
                         </div>
 
-                        {/* 移植元PHP版・発表資料へのリンクグループ（右端寄せ） */}
+                        {/* 移植元・発表資料へのリンクグループ（右端寄せ） */}
                         {hasExtraLinks && (
                           <div className='flex flex-wrap gap-4'>
-                            {project.phpUrl && (
+                            {/* 移植元リンク（表示ラベルはoriginLabelで指定） */}
+                            {project.originUrl && (
                               <a
-                                href={project.phpUrl}
+                                href={project.originUrl}
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors'
                               >
                                 <Github size={20} />
                                 <span className='text-sm sm:text-base'>
-                                  PHP版
+                                  {project.originLabel ?? '移植元'}
                                 </span>
                               </a>
                             )}
